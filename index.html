@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galentine 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fff1f5, #fde7ef);
+      color: #3a2c2c;
+      overflow-x: hidden;
+    }
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(14px);
+      border-radius: 26px;
+      padding: 55px 38px;
+      max-width: 720px;
+      box-shadow: 0 25px 70px rgba(0,0,0,0.08);
+    }
+    h1, h2 { font-family: 'Playfair Display', serif; }
+    h1 { font-size: 3rem; margin-bottom: 18px; }
+    h2 { font-size: 2.3rem; margin-bottom: 18px; }
+    p {
+      font-size: 1.08rem;
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+    .highlight { color: #c94b6b; font-weight: 500; }
+    .btn {
+      display: inline-block;
+      margin-top: 26px;
+      padding: 14px 38px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #ff8fb1, #ff5c8a);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      box-shadow: 0 12px 35px rgba(255,92,138,0.35);
+      transition: all 0.3s ease;
+    }
+    .btn:hover { transform: translateY(-4px); box-shadow: 0 18px 45px rgba(255,92,138,0.45); }
+    .options { margin-top: 25px; position: relative; }
+    .no-btn {
+      background: #fff;
+      color: #ff5c8a;
+      border: 2px solid #ff5c8a;
+      margin-left: 15px;
+      position: absolute;
+    }
+    .footer { font-size: 0.9rem; opacity: 0.7; margin-top: 28px; }
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 18px;
+      color: #ff5c8a;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.8;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(-110vh) scale(1.4); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <section>
+    <div class="card">
+      <h1>Hey bbg 🌸</h1>
+      <p>This is not some big dramatic thing.</p>
+      <p>Just something I wanted to do… because you matter.</p>
+      <p>Some people don’t try too hard, yet they make everything feel better.</p>
+      <p>And somehow, that’s <span class="highlight">you</span>.</p>
+      <a href="#story" class="btn">Scroll slowly ✨</a>
+    </div>
+  </section>
+
+  <section id="story">
+    <div class="card">
+      <h2>What we love 🤍</h2>
+      <p>The way we laugh at the most random things.</p>
+      <p>The comfort, the jokes, the small talks that turn into long ones.</p>
+      <p>Being around you just feels… easy. Happy. Right.</p>
+      <p><em>Ninna jothe idre manasu light aagutte.</em></p>
+      <p><em>Nijavaagi, nin smile sakkath cute.</em></p>
+      <a href="#question" class="btn">Okay so… 💌</a>
+    </div>
+  </section>
+
+  <section id="question">
+    <div class="card">
+      <h2>So bbg…</h2>
+      <p>This Valentine’s Day, no pressure, no big plans.</p>
+      <p>Just us — coffee, photos, laughs, memories.</p>
+      <p>Will you be my <span class="highlight">Galentine</span>? 💗</p>
+      
+      <div class="options">
+        <a href="#yes" class="btn">YES 💕</a>
+        <a href="javascript:void(0)" class="btn no-btn" id="noBtn">No 🙃</a>
+      </div>
+      <div class="footer">(No button has commitment issues 😌)</div>
+    </div>
+  </section>
+
+  <section id="yes">
+    <div class="card">
+      <h1>Knew it 😏💞</h1>
+      <p>See? You couldn’t say no.</p>
+      <p>Now it’s official — this Galentine’s Day is ours.</p>
+      <p>Coffee dates, laughs, chaos, comfort — all booked.</p>
+      <p><span class="highlight">So happy it’s you.</span></p>
+      <p>Just really glad it’s you. 💐</p>
+      <div class="footer">Happy Galentine’s Day 💕</div>
+    </div>
+  </section>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerText = '❤';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 4 + Math.random() * 4 + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 400);
+
+    const noBtn = document.getElementById('noBtn');
+    noBtn.addEventListener('mouseover', () => {
+      const x = Math.random() * 260 - 130;
+      const y = Math.random() * 140 - 70;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  </script>
+
+</body>
+</html>
